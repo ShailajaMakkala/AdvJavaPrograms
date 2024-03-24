@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;NumberApplication&apos;&#x0D;&#x0A;- Original project: &apos;NumberApplication&apos;&#x0D;&#x0A;- Original element: &apos;NumberRange.js&apos;" description="Delete element" element1="src/main/webapp/NumberRange.js" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1708995265777" subPackages="false" version="1.0"/>
+</session>

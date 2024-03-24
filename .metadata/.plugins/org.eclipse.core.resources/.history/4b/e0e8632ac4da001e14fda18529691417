@@ -1,0 +1,31 @@
+<%@page Language="java" contentType="text/html"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"%>
+
+<html>
+<head>
+<title>Product List</title>
+<!--  BootStrap CDN Link to Get the Support of BootStrap -->
+	<link rel="sytlesheet
+		href="href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+
+<body>
+	<table class="table table-bordered table-stripped">
+	<thread class="thread-dark">
+	<tr>
+		<th>Product Id</th>th>
+		<th>Product Name</th>th>
+		<th>Product Cost</th>th>
+		<th>Product Brand</th>th>
+		<th>Product Made In</th>th>
+		<th>Product Mfc Date</th>th>
+		<th>Product Exp Date</th>th>
+		<th>Product Image</th>th>
+		
+		
+		
+		
+	</table>
+</body>
+</html>

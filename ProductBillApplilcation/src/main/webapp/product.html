@@ -1,0 +1,29 @@
+<html>
+<head>
+
+<title>Product Bill Application</title>
+</head>
+<body bgcolor="skyblue">
+ <h2>Product Bill Application</h2>
+ <form method="get" action="./ProductServlet">
+ 
+  <label>Product ID</label>
+ <input type="number" name="proId" required/>
+ <br><br>
+ 
+ <label>Product Name</label>
+ <input type="text" name="proName" required/>
+ <br><br>
+ 
+  <label>Product Price</label>
+ <input type="number" name="proPrice" required/>
+ <br><br>
+ 
+  <label>Product Quantity</label>
+ <input type="number" name="proQuantity" min="2" max="15" required>
+ <br><br>
+ 
+ <input type="submit" value="ProductInvoice"/>
+ </form>
+</body>
+</html>

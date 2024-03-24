@@ -1,0 +1,10 @@
+.Firstdesign
+{
+color:purple;
+text-align:left;
+text-decoration:underline;
+font-size:30px;
+font-family:'Gill Sans';
+font-style:italic;
+padding-top:50px
+}

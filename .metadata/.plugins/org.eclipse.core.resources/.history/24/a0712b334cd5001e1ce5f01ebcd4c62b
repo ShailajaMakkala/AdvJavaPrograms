@@ -1,0 +1,4 @@
+function greet()
+{
+	document.write("Love You Greeshma")
+}

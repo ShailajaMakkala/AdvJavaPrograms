@@ -1,0 +1,5 @@
+package com.sathya.servlet;
+
+public class ProductDao {
+
+}

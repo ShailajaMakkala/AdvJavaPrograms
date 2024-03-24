@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Registration App........</title>
+
+</head>
+<body bgcolor="skyblue">
+<h1>Registration form......</h1>
+<form Method="get"  action="./RegistrationServlet">
+
+<label >User Name</label>
+<input type="text" name="username">
+<br><br>
+<label>User Password:</label>
+<input type="password" name="password">
+<br><br>
+
+<label>User Mobile</label>
+<input type="number" name="mobile" required/>
+<br><br>
+
+<label>User Email:</label>
+<input type="email" name="email" required/>
+<br><br>
+
+<label>Gender:</label>
+<input type="radio" name="gender" value="male"/>MALE
+<input type="radio" name="gender" value="female"/>FEMALE
+<br><br>
+
+<label>Select DOB:</label>
+<input type="date" name="dob" required/>
+<br><br>
+
+<label>Qualification:</label>
+<input type="checkbox" name="qualification" value="BSC"/>BSC
+<input type="checkbox" name="qualification" value="BTech"/>BTech
+<input type="checkbox" name="qualification" value="MTech"/>MTech
+<br><br>
+
+
+<label>Country :</label>
+<select name="country">
+	<option>India</option>
+	<option>China</option>
+	<option>Japan</option>
+	<option>USA</option>
+</select>
+<br><br>
+
+<label>Select Language :</label>
+<select name="language" size='3' multiple/>
+	<option>Telugu</option>
+	<option>Hindi</option>
+	<option>English</option>
+</select>
+<br><br>
+
+<label>Comments about Rathan sir :</label>
+<textarea name="comments rows="10" cols="25">
+</textarea>
+<br><br>
+
+<input type="submit" value="Register"/>
+			
+</form>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+package com.sathya.jdbc;
+
+public class ProcedureExecutionEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

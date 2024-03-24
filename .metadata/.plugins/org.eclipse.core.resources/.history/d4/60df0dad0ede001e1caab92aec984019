@@ -1,0 +1,59 @@
+<%@page import="com.sathya.servlet.ProductDao" import="java.util.Base64 " %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Form</title>
+<!--  BootStrap CDN Link to Get the Support of BootStrap -->
+	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link> 
+</head>
+<body>
+<div class="container mt-5 text-center">
+<h2 class="text-center font-italic mb-1">Save product data...</h2>
+<form method="post" action="./UpdateProductServlet" enctype="multipart/form-data" onsubmit="return validateForm()">
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="proid">product Id:</label>
+ <input type="text"  class="form-control-sm" id="proid" name="proId" value="${existingobject.pid}" required/>
+</div>
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="proName">product Name::</label>
+ <input type="text"  class="form-control-sm" id="proName" name="proName"  value="${existingobject.proname}" required/>
+</div>
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="proPrice">product Price:</label>
+ <input type="number"  class="form-control-sm" id="proprice" name="proprice"  value="${existingobject.proprice}" required/>
+</div>
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="proBrand">product Brand:</label>
+ <input type="text"  class="form-control-sm" id="proBrand" name="proBrand" value="${existingobject.probrand}" required/>
+</div>
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="probrand">product MadeIn:</label>
+ <input type="text"  class="form-control-sm" id="madeIn" name="madeIn"  value="${existingobject.promadein}" required/>
+</div>
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="proMfgDate">product ManufacturedDate:</label>
+ <input type="date"  class="form-control-sm" id="proMfgDate" name="proMfgDate"  value="${existingobject.promnfdate}" required/>
+</div>
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="proExpDate">product ExpiryDate:</label>
+ <input type="date"  class="form-control-sm" id="proExpDate" name="proExpDate"  value="${existingobject.proexpdate}"  required/>
+</div>
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="proImage">current Image:</label>
+ <img id="currentimage" src="data:image/jpeg;base64,${Base64.getEncoder().encodeToString(existingProduct.proImage)}" alt="current  product  image" style="max-width:100px; max-height:100px;">  
+ <input type="hidden" id="existingImage"  name="existingImage"  value="${existingProduct.proImage}"/>
+</div>
+<div class="form-group">
+ <label class="font-italic text-center font-weight-bold"  for="newProImage">New Image:</label> 
+<input type="file" id="newimage"  name="newimage"  value="${existingProduct.proImage}">
+</div>
+<div>
+<input type="submit"  class="btn btn-success" value="update"/>
+</div>
+</form>
+</div>
+</body>
+</html>

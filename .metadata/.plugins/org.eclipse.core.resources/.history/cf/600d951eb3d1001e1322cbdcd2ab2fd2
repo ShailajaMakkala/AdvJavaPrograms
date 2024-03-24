@@ -1,0 +1,25 @@
+package com.sathya.jdbc;
+
+import java.sql.SQLException;
+
+public class DataBaseClient {
+
+	public static void main(String[] args) throws SQLException {
+		ProductDao c =new ProductDao();
+		
+		/*int res1=productDao.createproductTable();
+		System.out.println("Table created sucessfully");*/
+		
+		int res1=productDao.save(new Product(1001,"TV",40000.25));
+		System.out.println("Data inserted Sucessfully...."+res1);
+		
+		int res2=productDao.save(new Product(1002,"Refrigirator",15000.75));
+		System.out.println("Data inserted Sucessfully...."+res2);
+
+		int res3=productDao.save(new Product(1003,"WashingMachine",3000.50));
+		System.out.println("Data inserted Sucessfully...."+res3);
+		
+		
+	}
+
+}

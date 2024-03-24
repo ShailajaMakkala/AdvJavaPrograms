@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Reverse A String</title>
+    <script type="text/javascript" src="ReverseString.js">
+    </script>
+</head>
+<body>
+    <form>
+        <label>Enter the String:</label>
+        <input type="text" id="String" onclick="ConvertToReverseString()" required>
+        <br><br>
+        <label>Reverse:</label>
+        <input type="text" id="ReverseString" readonly>
+        <br><br>
+    </form>
+</body>
+</html>

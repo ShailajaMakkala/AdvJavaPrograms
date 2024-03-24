@@ -1,0 +1,18 @@
+package com.sathya.jdbc;
+
+public class Product {
+
+	public static void main(String[] args) {
+		private int proid;
+		private String proname;
+		private double prosalary;
+		
+		//Generate the argument constructor
+				public Product(int proid, String proname, double prosalary) {
+					this.proid = proid;
+					this.proname = proname;
+					this.prosalary = prosalary;
+				}
+	}
+
+}

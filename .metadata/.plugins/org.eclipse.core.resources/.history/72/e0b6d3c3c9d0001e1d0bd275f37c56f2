@@ -1,0 +1,23 @@
+<html>
+<head>
+ <title>Cascading Style Sheets</title>
+<link rel="stylesheet" type="text/css"  href="mydesign.css"/>
+</head>
+
+<body>
+	<div class="Firstdesign">
+	<h1>Ratan Sir</h1>
+	<p>Ratan sir nice good woww</p>
+	</div>
+	
+	<div class="Seconddesign">
+	<ol Fruits:>
+		<ol type="i">
+			<li>Apple</li>
+			<li>Mango</li>
+			<li>Orange</li>
+		</ol>
+	</ol>
+	
+</body>
+</html>

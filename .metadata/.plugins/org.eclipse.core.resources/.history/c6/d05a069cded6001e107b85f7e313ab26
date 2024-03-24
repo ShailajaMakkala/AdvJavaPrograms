@@ -1,0 +1,27 @@
+function ConvertStringtorev()
+  {
+	  
+	 // Corrected variable name
+    const stringIn = document.getElementById('StringIn').value; 
+    let i;
+    
+     // Changed variable name and initialized as empty string
+	  let stringOut = ""; 
+    
+    // Concatenate characters to form the reversed string
+	for (i = stringIn.length - 1; i >= 0; i--)
+     {
+        stringOut += stringIn[i]; 
+    }
+     // Corrected variable name
+     document.getElementById('ReverseString').value = stringOut; 
+    
+    
+    //comparing input and output 
+    if(stringIn===stringOut)
+    
+    alert("IT IS A PALINDROME");
+    else
+        alert("IT IS NOT A PALINDROME");
+
+}

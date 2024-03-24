@@ -1,0 +1,14 @@
+let num=parseInt(prompt("Enter the number"))
+for(var num=1;num<=100;num++);
+{
+	if(num%3===0)
+		document.write("Fizz");
+	elseif(num%5===0)
+			document.write("Buzz");
+	elseif(num%3===0 &&num%5===0)
+				document.write("FizzBuzz");
+
+
+}
+
+

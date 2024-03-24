@@ -1,0 +1,193 @@
+package com.sathya.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductDao {
+
+	
+		public int createproductTable() throws SQLException
+		{
+			Connection connection=null;
+			Statement statement=null;
+			int count=0;
+		try
+		{
+			//get the connection
+			connection=DbConnection.createconnection();
+			
+			//create the ps object
+			statement=connection.createStatement();
+			String q1=("create table Product(proid number(5),proname varchar2(10),proprice(7,2))");
+			count=statement.executeUpdate(q1);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+			
+		}
+		finally {
+			//before release connection  v he the connection present or not
+			
+			
+			if(connection!=null)
+				connection.close();
+			if(statement!=null)
+				statement.close();
+		}
+		return count;
+		}
+		public int save(Product pro) 
+		{
+			//Dclare the  resources
+			Connection connection=null;
+			PreparedStatement preparedStatement=null;
+			int count1=0;
+			try
+			{
+				//get the connection
+				connection=DbConnection.createconnection();
+				
+				//create the  ps object
+				preparedStatement=connection.prepareStatement("insert into emp values(?,?,?)");
+				
+				//Read the data from emp object & set to prarameters
+			
+				preparedStatement.setInt(1, pro.getProid());
+				preparedStatement.setString(2,pro.getProname());
+				preparedStatement.setDouble(3,pro.getproprice());
+				
+				count1=preparedStatement.executeUpdate();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+				
+			}
+			finally {
+				//before release connection  v he the connection present or not
+				try
+				{
+				if(connection!=null)
+					connection.close();
+				if(preparedStatement!=null)
+					preparedStatement.close();
+				}
+				catch(SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			return count1;
+			}
+		public Product getProductById(int  proid) throws SQLException
+		{
+			Product product=null;
+			
+			try(Connection connection=DbConnection.createconnection();
+					PreparedStatement preparedStatement=connection.prepareStatement("select * from pro where proid=?"))
+			{
+				preparedStatement.setInt(1,proid);
+				ResultSet resultSet=preparedStatement.executeQuery();
+				if(resultSet.next())
+				{
+					product=new Product();
+					product.setProid(resultSet.getInt(1));
+					product.setProname(resultSet.getString(2));
+					product.setproprice(resultSet.getDouble(3));
+				}
+			}
+			catch(SQLException e) {
+				e.printStackTrace();
+				}
+			return product;
+			}
+		
+		public List<Product> getAllProducts() 
+		{
+			
+		List<Product> emps=new ArrayList<Product>();
+			try(Connection connection=DbConnection.createconnection();
+					Statement statement=connection.createStatement())
+			{
+				ResultSet resultSet=statement.executeQuery("select * from emp");
+				
+				while(resultSet.next())
+				{
+					Product product=new Product();
+					
+					product.setProid(resultSet.getInt(1));
+					product.setProname(resultSet.getString(2));
+					product.setproprice(resultSet.getDouble(3));
+					Product.add(product);
+				}
+			}
+				catch(SQLException e) 
+				{
+					e.printStackTrace();
+				}
+				return emps;
+		}
+		public int updateByPrice(double priceRange,double IncreamentValue) {
+			int count1=0;
+			try(Connection connection=DbConnection.createconnection();
+					PreparedStatement preparedStatement=connection.prepareStatement("UPDATE emp set proprice=? where prodprice>? "))
+			{
+				preparedStatement.setDouble(1,priceRange);
+				preparedStatement.setDouble(2,IncreamentValue);
+
+				
+				count1=preparedStatement.executeUpdate();
+				
+			}
+			catch(SQLException e) {
+				e.printStackTrace();
+			}
+			return count1;
+		}
+		
+				
+		public int deleteByprice(double price) {
+			int count1=0;
+			try(Connection connection=DbConnection.createconnection();
+					PreparedStatement preparedStatement=connection.prepareStatement("delete from pro where proprice>?"))
+			{
+				preparedStatement.setDouble(1,price);
+				
+				count1=preparedStatement.executeUpdate();
+				
+			}
+			catch(SQLException e) {
+				e.printStackTrace();
+			}
+			return count1;
+		}
+		
+		
+	public int dropTable() {
+		int count1=0;
+		try(Connection connection=DbConnection.createconnection();
+				PreparedStatement preparedStatement=connection.prepareStatement("delete table product"))
+		{
+			
+			count1=preparedStatement.executeUpdate();
+			
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return count1;
+	}
+	public int saveProduct(Product product) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+		}
+		
+

@@ -1,0 +1,9 @@
+.Firstdesign
+{
+color:orange;
+text-align:right;
+text-decoration:underline;
+font-size:30px;
+font-family:'Gill Sans';
+font-style:italic;
+}

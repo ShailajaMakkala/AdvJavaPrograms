@@ -1,0 +1,32 @@
+function checkPalindrome(string) {
+
+   /* // convert string to an array
+    const arrayValues = string.split('');
+
+    // reverse the array values
+    const reverseArrayValues = arrayValues.reverse();
+
+    // convert array to string
+    const reverseString = reverseArrayValues.join('');*/
+    
+    const stringIn = document.getElementById('String').value; 
+		
+		let i;
+    	let stringOut = ""; 
+    	for (i = stringIn.length - 1; i >= 0; i--) 
+    	{
+        stringOut += stringIn[i]; 
+   		 }
+   		 
+   		//set the output to celsiusOutput filled
+   		document.getElementById('ReversString').value = stringOut; 
+
+    	if(string == ReversString)
+    	 {
+        alert('It is a palindrome');
+   		 }
+   	 else 
+   	 {
+        alert('It is not a palindrome');
+    }
+}

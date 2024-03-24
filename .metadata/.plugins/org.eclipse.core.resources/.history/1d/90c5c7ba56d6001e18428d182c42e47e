@@ -1,0 +1,14 @@
+function ConvertToReverseString()
+ {
+		const stringIn = document.getElementById('String').value; 
+		
+		let i;
+    	let stringOut = ""; 
+    	for (i = stringIn.length - 1; i >= 0; i--) 
+    	{
+        stringOut += stringIn[i]; 
+   		 }
+   		 
+   		//set the output to celsiusOutput filled
+   		document.getElementById('ReversString').value = stringOut; 
+}

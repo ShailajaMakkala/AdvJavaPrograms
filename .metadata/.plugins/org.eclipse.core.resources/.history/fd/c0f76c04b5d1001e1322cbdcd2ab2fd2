@@ -1,0 +1,90 @@
+package com.sathya.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class ProductDao {
+
+	
+		public int createproductTable() throws SQLException
+		{
+			Connection connection=null;
+			Statement statement=null;
+			int count=0;
+		try
+		{
+			//get the connection
+			connection=DbConnection.createconnection();
+			
+			//create the ps object
+			statement=connection.createStatement();
+			String q1=("create table Product(proid number(5),proname varchar2(10),proprice(7,2))");
+			count=statement.executeUpdate(q1);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+			
+		}
+		finally {
+			//before release connection  v he the connection present or not
+			
+			
+			if(connection!=null)
+				connection.close();
+			if(statement!=null)
+				statement.close();
+		}
+		return count;
+		}
+		public static int save(Product product) 
+		{
+			//Dclare the  resources
+			Connection connection=null;
+			PreparedStatement preparedStatement=null;
+			int count=0;
+			try
+			{
+				//get the connection
+				connection=DbConnection.createconnection();
+				
+				//create the  ps object
+				preparedStatement=connection.prepareStatement("insert into emp values(?,?,?)");
+				
+				//Read the data from emp object & set to prarameters
+			
+				preparedStatement.setInt(1, product.getProid());
+				preparedStatement.setString(2,product.getProname());
+				preparedStatement.setDouble(3,product.getProsalary());
+				
+				count=preparedStatement.executeUpdate();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+				
+			}
+			finally {
+				//before release connection  v he the connection present or not
+				try
+				{
+				if(connection!=null)
+					connection.close();
+				if(preparedStatement!=null)
+					preparedStatement.close();
+				}
+				catch(SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			return count;
+			}
+		public static int saveProduct(Product product) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		
+}

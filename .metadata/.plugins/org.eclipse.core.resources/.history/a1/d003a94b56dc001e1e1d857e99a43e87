@@ -1,0 +1,10 @@
+package com.sathya.servlet;
+
+public class DatabaseUtils {
+
+	public static Connection createconnection() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

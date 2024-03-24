@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Palindrome or not</title>
+    <script type="text/javascript" src="Palindrome.js">
+    </script>
+</head>
+<body>
+    <form>
+        <label>Enter the String:</label>
+        <input type="text" id="String" onclick="ConvertStringtorev()" required>
+        <br><br>
+        
+        <label>Palindrome:</label>
+        <input type="text" id="stringOut" readonly>
+        <br><br>
+      
+    </form>
